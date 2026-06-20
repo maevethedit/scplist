@@ -77,7 +77,7 @@
         .banner-cast { font-size: 13px; color: #94a3b8; line-height: 1.5; margin: 0; }
         .banner-cast i { color: #3a8fba; margin-right: 6px; font-size: 11px; }
         .banner-synopsis { font-size: 13px; color: #64748b; line-height: 1.5; margin: 0; }
-        .banner-stats { display: flex; gap: 20px; font-size: 13px; color: #64748b; justify-content: center; margin-top: 4px; }
+        .banner-stats { display: flex; gap: 20px; font-size: 13px; color: #64748b; justify-content: center; margin-top: 8px; }
         .banner-stats strong { color: #ffffff; font-weight: 700; }
         .right-content { display: flex; flex-direction: column; width: 100%; }
         .desktop-header-info { display: none; }
@@ -109,7 +109,17 @@
         .table-header { display: none; }
         @media (min-width: 700px) {
             .table-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; width: 100%; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #3d4f6b; letter-spacing: 0.05em; background-color: #111622; border: 1px solid #1a2233; border-radius: 8px 8px 0 0; }
-            .th-name { flex: 1; } .th-size { width: 68px; text-align: left; }
+            .th-name { flex: 1; } .th-size { width: 62px; text-align: left; margin-right: 34px; }
+            .th-downloads {
+                width: 110px; text-align: right; margin-right: 6px;
+                background: none; border: none; cursor: pointer;
+                font: inherit; color: #3d4f6b; font-weight: 700;
+                text-transform: uppercase; letter-spacing: 0.05em; font-size: 11px;
+                display: flex; align-items: center; justify-content: flex-end; gap: 5px;
+                transition: color 0.2s;
+            }
+            .th-downloads:hover { color: #94a3b8; }
+            .th-downloads i { font-size: 10px; }
         }
 
         /* LISTA */
@@ -122,20 +132,27 @@
         .sp-card::after { content: ''; position: absolute; top: 0; left: 0; width: 40%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent); transform: translateX(-100%) skewX(-15deg); pointer-events: none; }
         .sp-card:active { transform: scale(0.98); }
         .sp-bar { width: 5px; flex-shrink: 0; }
-        .sp-bar.k4 { background: linear-gradient(to bottom, #1a6f9b, #3a8fba); }
-        .sp-bar.k1 { background: linear-gradient(to bottom, #3d4f6b, #64748b); }
-        .sp-card-inner { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 14px 14px 12px; min-width: 0; }
-        .sp-card-info { flex: 1; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
-        .sp-title { font-size: 14px; font-weight: 700; color: #fff; line-height: 1.4; }
+        .sp-bar { background: linear-gradient(to bottom, #3d4f6b, #64748b); }
+        .sp-card-inner { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px 10px 12px; min-width: 0; }
+        .sp-card-info { flex: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+        .sp-title { font-size: 14px; font-weight: 700; color: #fff; line-height: 1.35; }
         .sp-badges { display: flex; gap: 5px; flex-wrap: wrap; }
         .sp-badge { display: flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 600; color: #94a3b8; background: #171e2e; border: 1px solid #1e293b; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
         .sp-badge i { font-size: 9px; color: #4a90b8; }
+        .sp-size-mobile { font-size: 13px; color: #3d4f6b; }
         .sp-card-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
-        .sp-size { font-size: 12px; color: #3d4f6b; margin-right: 14px;}
+        .sp-size { font-size: 12px; color: #3d4f6b; margin-right: 14px; display: none; }
+        .sp-quality-pill { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-top: 0; margin-right: 10px; display: none; }
+        .sp-quality-pill.k4 { color: #3a8fba; background: rgba(26,111,155,0.15); border: 1px solid #1a6f9b; }
+        .sp-quality-pill.k1 { color: #64748b; background: rgba(100,116,139,0.1); border: 1px solid #3d4f6b; }
+        .sp-card-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+        .sp-size { font-size: 12px; color: #3d4f6b; margin-right: 14px; display: none; }
         .sp-quality-pill { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-top: 30px; margin-right: 10px; }
         .sp-quality-pill.k4 { color: #3a8fba; background: rgba(26,111,155,0.15); border: 1px solid #1a6f9b; }
         .sp-quality-pill.k1 { color: #64748b; background: rgba(100,116,139,0.1); border: 1px solid #3d4f6b; }
         .sp-arrow { color: #3a8fba; font-size: 14px; flex-shrink: 0; opacity: 0; transform: translateX(-6px); transition: opacity 0.3s, transform 0.3s; }
+        .sp-downloads { display: flex; align-items: baseline; gap: 5px; font-size: 11px; color: #94a3b8; font-weight: 700; margin-top: 0; margin-right: 14px; white-space: nowrap; }
+        .sp-downloads strong { font-size: 17px; font-weight: 800; color: #fff; font-family: 'Consolas', monospace; }
 
         @media (min-width: 700px) {
             .sp-card { background-color: #0d1521; border: none; border-bottom: 1px solid #1a2233; border-radius: 0; transition: background-color 0.2s; }
@@ -146,13 +163,16 @@
             .sp-card:hover .sp-arrow { opacity: 1; transform: translateX(0); }
             .sp-card:active { background-color: rgba(26,111,155,0.15); transform: none; }
             .sp-bar { display: none; }
-            .sp-card-inner { padding: 14px 16px; }
-            .sp-card-info { flex-direction: row; align-items: center; }
-            .sp-title { flex: 1; }
-            .sp-badges { margin-left: 12px; }
+            .sp-card-inner { padding: 16px 20px; }
+            .sp-card-info { flex-direction: row; align-items: center; gap: 24px; }
+            .sp-title { flex: 1; padding-right: 20px; }
+            .sp-badges { flex-direction: column; align-items: flex-start; gap: 5px; margin-left: 0; flex-shrink: 0; }
+            .sp-size-mobile { display: none; }
             .sp-card-right { flex-direction: row; align-items: center; gap: 10px; margin-left: 12px; }
-            .sp-size { font-size: 13px; color: #64748b; width: 70px; text-align: right; }
+            .sp-size { display: block; font-size: 14px; color: #64748b; width: 70px; text-align: right; }
             .sp-quality-pill { display: none; }
+            .sp-downloads { margin-top: 0; margin-right: 0; width: 110px; justify-content: flex-end; }
+            .sp-downloads strong { font-size: 15px; font-family: inherit; }
         }
 
         /* DESKTOP LAYOUT */
@@ -248,6 +268,11 @@
                 </div>
                 <p class="banner-synopsis-short">A boy fights for a just death...</p>
               <button id="more-info-btn" class="more-info-btn">More info<i id="more-info-icon" class="fa-solid fa-chevron-down"></i></button>
+
+                <div class="banner-stats mobile-only">
+                    <span><strong id="total-count-mobile">0</strong> scenepacks</span>
+                    <span><strong id="total-downloads-mobile">0</strong> downloads</span>
+                </div>
             </div>
 
             <div id="more-info-drawer" class="more-info-drawer">
@@ -277,18 +302,15 @@
                 </div>
             </div>
         </div>
-
-        <div class="banner-stats mobile-only">
-            <span><strong id="total-count-mobile">0</strong> scenepacks</span>
-        </div>
     </div>
 
     <div class="right-content">
         <div class="desktop-header-info">
             <img src="https://image.tmdb.org/t/p/original/tEmqJ1k4MdjuaKaetn8wGyZGcyC.png" alt="Jujutsu Kaisen" class="banner-title-img">
-            <p class="desktop-meta-text">2020  &nbsp;•&nbsp; Crime, Drama, Mystery &nbsp;•&nbsp; TV Show</p>
+            <p class="desktop-meta-text">2020  &nbsp;•&nbsp; Animation, Action & Adventure, Sci-Fi & Fantasy &nbsp;•&nbsp; TV Show</p>
             <div class="desktop-stats-row">
                 <span><strong id="total-count">0</strong> scenepacks</span>
+                <span><strong id="total-downloads">0</strong> downloads</span>
             </div>
         </div>
 
@@ -305,6 +327,7 @@
         <div class="table-header">
             <span class="th-name"><strong id="total-count-table" style="color:#fff;">0</strong> Scenepacks</span>
             <span class="th-size">Size</span>
+            <button class="th-downloads" id="sort-downloads-btn">Downloads <i class="fa-solid fa-arrow-down-short-wide" id="sort-downloads-icon"></i></button>
         </div>
         <div class="scenepacks-list" id="scenepacks-list"></div>
         <div class="empty-state" id="empty-state">
@@ -367,6 +390,7 @@
     });
 
     let scenepacks = [];
+    let downloadsSortDir = 'desc';
     let activeFilters = { codec: null, quality: null };
 
     async function carregarDados() {
@@ -381,9 +405,14 @@
                 }
             });
             const count = scenepacks.length;
+            const totalDownloads = scenepacks.reduce((sum, sp) => sum + (sp.downloads || 0), 0);
             ['total-count','total-count-mobile','total-count-table'].forEach(id => {
                 const el = document.getElementById(id);
                 if (el) el.textContent = count;
+            });
+            ['total-downloads','total-downloads-mobile'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = totalDownloads.toLocaleString('en-US');
             });
             renderCards();
         } catch(e) { console.error(e); }
@@ -400,6 +429,7 @@
             const matchQuality = !activeFilters.quality || sp.quality === activeFilters.quality;
             return matchSearch && matchCodec && matchQuality;
         });
+        filtered.sort((a, b) => downloadsSortDir === 'desc' ? (b.downloads || 0) - (a.downloads || 0) : (a.downloads || 0) - (b.downloads || 0));
         list.innerHTML = '';
         if (filtered.length === 0) { empty.style.display = 'block'; counter.textContent = ''; return; }
         empty.style.display = 'none';
@@ -419,14 +449,13 @@
                             <span class="sp-badge"><i class="fa-solid fa-user"></i>${sp.creator}</span>
                             <span class="sp-badge"><i class="fa-solid fa-film"></i>${sp.codec}</span>
                             <span class="sp-badge"><i class="fa-solid fa-expand"></i>${sp.quality}</span>
-                            <span class="sp-badge"><i class="fa-solid fa-download"></i>${sp.downloads}</span> 
-</div>
                         </div>
+                        <span class="sp-size-mobile">${sp.size}</span>
                     </div>
                     <div class="sp-card-right">
-
                         <span class="sp-quality-pill ${qc}">${sp.quality === '2160p' ? '4K' : sp.quality}</span>
                         <span class="sp-size">${sp.size}</span>
+                        <span class="sp-downloads"><strong>${(sp.downloads || 0).toLocaleString('en-US')}</strong> downloads</span>
                         <i class="fa-solid fa-arrow-right sp-arrow"></i>
                     </div>
                 </div>
@@ -475,8 +504,20 @@
     });
 
     document.getElementById('search-input').addEventListener('input', renderCards);
+
+    const sortBtn = document.getElementById('sort-downloads-btn');
+    const sortIcon = document.getElementById('sort-downloads-icon');
+    if (sortBtn) {
+        sortBtn.addEventListener('click', () => {
+            downloadsSortDir = downloadsSortDir === 'desc' ? 'asc' : 'desc';
+            sortIcon.className = downloadsSortDir === 'desc' ? 'fa-solid fa-arrow-down-short-wide' : 'fa-solid fa-arrow-up-wide-short';
+            renderCards();
+        });
+    }
+
     carregarDados();
 </script>
 </body>
 </html>
-         
+
+    
