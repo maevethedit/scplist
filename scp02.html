@@ -401,7 +401,7 @@
             snap.forEach(doc => {
                 const d = doc.data();
                 if (d.titulo && d.titulo.toLowerCase().includes("spider-man")) {
-                    scenepacks.push({ id: doc.id, title: d.titulo, creator: d.criador || "Membro", codec: d.codec, quality: d.quality, size: d.tamanho || "N/A", url: d.url_download || "#", downloads: d.downloads || 0 });
+                    scenepacks.push({ id: doc.id, title: d.titulo, creator: d.criador || "maevethedit", codec: d.codec, quality: d.quality, size: d.tamanho || "N/A", url: d.url_download || "#", downloads: d.downloads || 0 });
                 }
             });
             const count = scenepacks.length;
