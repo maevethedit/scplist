@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godzilla (2014) | Se7en Editing Scenepacks</title>
+    <meta name="description" content="All scenepacks of Godzilla (2014). filter by quality and codec. Free Download on Se7en Editing.">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @font-face { font-family: 'RBNo3'; src: url('https://cdn.jsdelivr.net/gh/maevethedit/scenepacks-Se7en-Culture@6537528b5c85e4a5b60521043e2fc91892e87aee/RBNo3.1-Black.otf') format('opentype'); }
+        @font-face { font-family: 'NotoSansExtCond'; src: url('https://cdn.jsdelivr.net/gh/maevethedit/fonts-for-scenepacks@main/Noto%20Sans%20ExtCond.ttf') format('opentype'); }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #090F16; color: #ffffff; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
+        body::-webkit-scrollbar { width: 8px; }
+        body::-webkit-scrollbar-thumb { background: #1a2e45; border-radius: 20px; }
+        body::-webkit-scrollbar-track { background: #090F16; }
+
+        .fundo-animado { position: fixed; top: 460px; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(26,34,51,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(26,34,51,0.4) 1px, transparent 1px), linear-gradient(rgba(26,34,51,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(26,34,51,0.15) 1px, transparent 1px); background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px; z-index: -1; pointer-events: none; animation: deslizarFundo 20s linear infinite; }
+        @keyframes deslizarFundo { from { background-position: 0 0,0 0,0 0,0 0; } to { background-position: 100px 100px,100px 100px,20px 20px,20px 20px; } }
+        @keyframes varreduraAzul { 0% { background-position: 0% 0; } 100% { background-position: 100% 0; } }
+        @keyframes shimmer { 0% { transform: translateX(-100%) skewX(-15deg); } 100% { transform: translateX(350%) skewX(-15deg); } }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+        /* HEADER */
+        .header { position: fixed; top: 0; left: 0; right: 0; height: 64px; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; z-index: 1000; border-bottom: 1px solid transparent; background-color: transparent; backdrop-filter: none; transition: background-color 0.3s, border-color 0.3s, backdrop-filter 0.3s; }
+        .header.scrolled { background-color: rgba(11,14,20,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid #1a2233; }
+        .logo { font-family: 'RBNo3', Arial, sans-serif; font-weight: 900; font-size: 18px; color: #fff; display: flex; align-items: center; gap: -1px; text-transform: uppercase; text-decoration: none; margin-left: -23px; }
+        .logo img { width: 70px; height: 45px; object-fit: cover; border-radius: 4px; margin-top: -8px; }
+        .header-right { display: flex; align-items: center; gap: 14px; position: relative; }
+        .discord-link { color: #64748b; font-size: 22px; text-decoration: none; transition: color 0.2s, transform 0.2s; display: flex; align-items: center; -webkit-tap-highlight-color: transparent; }
+        .discord-link:hover { color: #5865F2; transform: scale(1.1); }
+
+        /* MENU BTN */
+        .menu-btn { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; cursor: pointer; transition: background 0.2s; -webkit-tap-highlight-color: transparent; flex-shrink: 0; margin-right: -59px; }
+        .menu-btn:hover { background: rgba(255,255,255,0.1); }
+        .menu-btn span { display: block; width: 18px; height: 2px; background: #94a3b8; border-radius: 2px; transition: all 0.3s ease; }
+        .menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .menu-btn.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* DROPDOWN */
+        .dropdown-menu { position: absolute; top: calc(100% + 10px); right: 0; width: 220px; background: #0d1521; border: 1px solid #1a2233; border-radius: 14px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); z-index: 1001; opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.2s, transform 0.2s, visibility 0.2s; overflow: hidden; }
+        .dropdown-menu.open { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-section { padding: 8px; }
+        .dropdown-section + .dropdown-section { border-top: 1px solid #1a2233; }
+        .dropdown-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #3d4f6b; padding: 8px 12px 4px; }
+        .dropdown-item { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 8px; text-decoration: none; color: #94a3b8; font-size: 13px; font-weight: 600; transition: background 0.2s, color 0.2s; -webkit-tap-highlight-color: transparent; }
+        .dropdown-item:hover { background: rgba(255,255,255,0.05); color: #fff; }
+        .dropdown-item.active { background: rgba(26,111,155,0.12); color: #4a90b8; }
+        .dropdown-item i { width: 16px; text-align: center; font-size: 13px; color: #3a8fba; }
+        .dropdown-item.discord-item { color: #7289da; }
+        .dropdown-item.discord-item i { color: #7289da; }
+
+        /* BANNER */
+        .banner-hero { position: relative; overflow: hidden; height: 560px; background-color: #090F16; }
+        .banner-bg { position: absolute; inset: 0; background-image: url('https://image.tmdb.org/t/p/original/kMmOg5ecav8QV6vC6otfpYcSYpX.jpg'); background-size: cover; background-position: center 20%; filter: brightness(1.1); }
+        .banner-overlay-mobile { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(9,15,22,0.15) 0%, rgba(9,15,22,0.5) 50%, rgba(9,15,22,0.92) 85%, #090F16 100%); z-index: 1; }
+
+        /* LAYOUT */
+        .main-layout { display: flex; flex-direction: column; padding: 0 16px; width: 100%; }
+        .left-sidebar { display: flex; flex-direction: column; align-items: center; text-align: center; margin-top: -180px; z-index: 5; width: 100%; }
+        .banner-poster { width: 130px; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.8); margin-bottom: 12px; display: block; }
+        .sidebar-card { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .mobile-header-info { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; }
+        .banner-title-img { max-width: 220px; height: auto; display: block; margin: 0 auto; }
+        .banner-meta { font-size: 12px; color: #64748b; margin: 0; }
+        .banner-genres { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 2px; }
+        .genre-tag { font-size: 11px; color: #94a3b8; background-color: rgba(23,30,46,0.85); border: 1px solid #1e293b; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+        .banner-synopsis-short { font-size: 13px; color: #94a3b8; line-height: 1.5; margin: 4px 0 0 0; max-width: 480px; }
+        .more-info-btn { background: none; border: none; color: #4a90b8; font-size: 11px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; padding: 6px 12px; font-family: inherit; -webkit-tap-highlight-color: transparent; }
+        .more-info-btn i { font-size: 11px; transition: transform 0.2s; }
+        .more-info-drawer { display: none; flex-direction: column; gap: 12px; width: 100%; background: rgba(13,21,33,0.7); border: 1px solid rgba(26,34,51,0.5); border-radius: 10px; padding: 14px; margin-top: 4px; text-align: left; }
+        .banner-ratings { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+        .rating-pill { display: flex; align-items: center; gap: 6px; background-color: rgba(17,22,34,0.9); border: 1px solid #1e293b; border-radius: 6px; padding: 5px 10px; font-size: 12px; font-weight: 700; }
+        .imdb-badge { background-color: #f5c518; color: #000; padding: 1px 5px; border-radius: 3px; font-size: 10px; font-weight: 800; }
+        .banner-cast { font-size: 13px; color: #94a3b8; line-height: 1.5; margin: 0; }
+        .banner-cast i { color: #3a8fba; margin-right: 6px; font-size: 11px; }
+        .banner-synopsis { font-size: 13px; color: #64748b; line-height: 1.5; margin: 0; }
+        .banner-stats { display: flex; gap: 20px; font-size: 13px; color: #64748b; justify-content: center; margin-top: 8px; }
+        .banner-stats strong { color: #ffffff; font-weight: 700; }
+        .right-content { display: flex; flex-direction: column; width: 100%; }
+        .desktop-header-info { display: none; }
+
+        /* FILTROS */
+        .search-area { padding: 12px 0 0; width: 100%; }
+        .search-box { display: flex; align-items: center; gap: 10px; background-color: #111622; border: 1px solid #1a2233; border-radius: 10px; padding: 12px 16px; transition: border-color 0.2s; }
+        .search-box:focus-within { border-color: #1a6f9b; }
+        .search-box i { color: #64748b; font-size: 14px; }
+        .search-box input { background: none; border: none; outline: none; color: #fff; font-size: 14px; width: 100%; font-family: inherit; }
+        .search-box input::placeholder { color: #3d4f6b; }
+        .filter-toggles { display: flex; flex-direction: column; gap: 8px; padding: 14px 0 0; width: 100%; }
+        .filter-row { display: flex; align-items: center; gap: 8px; }
+        .filter-group-label { font-size: 11px; color: #3d4f6b; text-transform: uppercase; font-weight: 600; white-space: nowrap; }
+        .filter-btn { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 20px; border: 1px solid #1e293b; background-color: #111622; color: #64748b; cursor: pointer; transition: all 0.2s; -webkit-tap-highlight-color: transparent; }
+        .filter-btn:active { transform: scale(0.95); }
+        .filter-btn.active { background-color: rgba(26,111,155,0.2); border-color: #1a6f9b; color: #4a90b8; }
+
+        /* ACTIVE BADGES */
+        .active-filters { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 0 0; width: 100%; }
+        .active-filters:empty { padding: 0; }
+        .active-badge { display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 20px; background-color: rgba(26,111,155,0.25); border: 1px solid #1a6f9b; color: #4a90b8; cursor: pointer; animation: fadeIn 0.2s ease; -webkit-tap-highlight-color: transparent; }
+        .active-badge i { font-size: 10px; }
+        .clear-all-btn { font-size: 12px; color: #3d4f6b; background: none; border: none; cursor: pointer; padding: 5px 4px; font-family: inherit; transition: color 0.2s; }
+        .clear-all-btn:hover { color: #94a3b8; }
+        .results-count { padding: 12px 0 0; width: 100%; font-size: 12px; color: #3d4f6b; }
+
+        /* TABLE HEADER */
+        .table-header { display: none; }
+        @media (min-width: 700px) {
+            .table-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; width: 100%; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #3d4f6b; letter-spacing: 0.05em; background-color: #111622; border: 1px solid #1a2233; border-radius: 8px 8px 0 0; }
+            .th-name { flex: 1; } .th-size { width: 62px; text-align: left; margin-right: 34px; }
+            .th-downloads {
+                width: 110px; text-align: right; margin-right: 6px;
+                background: none; border: none; cursor: pointer;
+                font: inherit; color: #3d4f6b; font-weight: 700;
+                text-transform: uppercase; letter-spacing: 0.05em; font-size: 11px;
+                display: flex; align-items: center; justify-content: flex-end; gap: 5px;
+                transition: color 0.2s;
+            }
+            .th-downloads:hover { color: #94a3b8; }
+            .th-downloads i { font-size: 10px; }
+        }
+
+        /* LISTA */
+        .scenepacks-list { padding: 1px; width: 100%; display: flex; flex-direction: column; gap: 10px; background-color: transparent; border-radius: 16px; }
+        @media (min-width: 700px) { .scenepacks-list { gap: 0; padding: 0 1px 10px; background-color: #0d1521; border-radius: 0 0 12px 12px; } }
+
+        /* SP CARD */
+        .sp-card { display: flex; align-items: stretch; background-color: #0d1521; border: 1px solid #1a2233; border-radius: 14px; overflow: hidden; text-decoration: none; color: inherit; position: relative; transition: border-color 0.35s, transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275), box-shadow 0.35s; -webkit-tap-highlight-color: transparent; }
+        .sp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #1a5a7a 40%, #3a8fba 50%, #1a5a7a 60%, transparent); background-size: 200% 100%; opacity: 0; transition: opacity 0.35s; animation: varreduraAzul 2.5s ease-in-out infinite alternate; }
+        .sp-card::after { content: ''; position: absolute; top: 0; left: 0; width: 40%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent); transform: translateX(-100%) skewX(-15deg); pointer-events: none; }
+        .sp-card:active { transform: scale(0.98); }
+        .sp-bar { width: 5px; flex-shrink: 0; }
+        .sp-bar { background: linear-gradient(to bottom, #3d4f6b, #64748b); }
+        .sp-card-inner { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 12px 10px 12px; min-width: 0; }
+        .sp-card-info { flex: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+        .sp-title { font-size: 14px; font-weight: 700; color: #fff; line-height: 1.35; }
+        .sp-badges { display: flex; gap: 5px; flex-wrap: wrap; }
+        .sp-badge { display: flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 600; color: #94a3b8; background: #171e2e; border: 1px solid #1e293b; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+        .sp-badge i { font-size: 9px; color: #4a90b8; }
+        .sp-size-mobile { font-size: 13px; color: #3d4f6b; }
+        .sp-card-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+        .sp-size { font-size: 12px; color: #3d4f6b; margin-right: 14px; display: none; }
+        .sp-quality-pill { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-top: 0; margin-right: 10px; display: none; }
+        .sp-quality-pill.k4 { color: #3a8fba; background: rgba(26,111,155,0.15); border: 1px solid #1a6f9b; }
+        .sp-quality-pill.k1 { color: #64748b; background: rgba(100,116,139,0.1); border: 1px solid #3d4f6b; }
+        .sp-card-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+        .sp-size { font-size: 12px; color: #3d4f6b; margin-right: 14px; display: none; }
+        .sp-quality-pill { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-top: 30px; margin-right: 10px; }
+        .sp-quality-pill.k4 { color: #3a8fba; background: rgba(26,111,155,0.15); border: 1px solid #1a6f9b; }
+        .sp-quality-pill.k1 { color: #64748b; background: rgba(100,116,139,0.1); border: 1px solid #3d4f6b; }
+        .sp-arrow { color: #3a8fba; font-size: 14px; flex-shrink: 0; opacity: 0; transform: translateX(-6px); transition: opacity 0.3s, transform 0.3s; }
+        .sp-downloads { display: flex; align-items: baseline; gap: 5px; font-size: 11px; color: #94a3b8; font-weight: 700; margin-top: 0; margin-right: 14px; white-space: nowrap; }
+        .sp-downloads strong { font-size: 17px; font-weight: 800; color: #fff; font-family: 'Consolas', monospace; }
+
+        @media (min-width: 700px) {
+            .sp-card { background-color: #0d1521; border: none; border-bottom: 1px solid #1a2233; border-radius: 0; transition: background-color 0.2s; }
+            .sp-card:last-child { border-bottom: none; }
+            .sp-card:hover { background-color: rgba(26,111,155,0.08); transform: none; box-shadow: none; }
+            .sp-card:hover::before { opacity: 1; }
+            .sp-card:hover::after { animation: shimmer 0.6s ease forwards; }
+            .sp-card:hover .sp-arrow { opacity: 1; transform: translateX(0); }
+            .sp-card:active { background-color: rgba(26,111,155,0.15); transform: none; }
+            .sp-bar { display: none; }
+            .sp-card-inner { padding: 16px 20px; }
+            .sp-card-info { flex-direction: row; align-items: center; gap: 24px; }
+            .sp-title { flex: 1; padding-right: 20px; }
+            .sp-badges { flex-direction: column; align-items: flex-start; gap: 5px; margin-left: 0; flex-shrink: 0; }
+            .sp-size-mobile { display: none; }
+            .sp-card-right { flex-direction: row; align-items: center; gap: 10px; margin-left: 12px; }
+            .sp-size { display: block; font-size: 14px; color: #64748b; width: 70px; text-align: right; }
+            .sp-quality-pill { display: none; }
+            .sp-downloads { margin-top: 0; margin-right: 0; width: 110px; justify-content: flex-end; }
+            .sp-downloads strong { font-size: 15px; font-family: inherit; }
+        }
+
+        /* DESKTOP LAYOUT */
+        @media (min-width: 700px) {
+            .banner-hero { height: 650px; }
+            .banner-bg { background-position: center 25%; filter: brightness(0.99); }
+            .banner-overlay-mobile { background: linear-gradient(to bottom, rgba(9,15,22,0.0) 0%, rgba(9,15,22,0.3) 45%, rgba(9,15,22,0.88) 80%, #090F16 100%), linear-gradient(to right, rgba(9,15,22,0.99) 0%, transparent 25%, transparent 74%, rgba(9,15,22,0.99) 100%); }
+            .main-layout { display: grid; grid-template-columns: 280px 1fr; gap: 32px; max-width: 1150px; margin: -200px auto 40px; padding: 0 20px; position: relative; z-index: 10; }
+            .left-sidebar { margin-top: 0; align-items: stretch; text-align: left; }
+            .banner-poster { width: 100%; max-width: 280px; height: auto; margin-bottom: 0; border-radius: 12px; }
+            .sidebar-card { background-color: #111622; border: 1px solid #1a2233; border-radius: 14px; padding: 20px; align-items: stretch; gap: 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.6); margin-top: 16px; }
+            .mobile-header-info { display: none; }
+            .more-info-btn { display: none; }
+            .more-info-drawer { display: flex !important; flex-direction: column; gap: 14px; background: none; border: none; box-shadow: none; padding: 0; margin: 0; }
+            .banner-ratings { justify-content: flex-start; }
+            .rating-pill { background-color: #171e2e; }
+            .banner-synopsis { font-size: 12.5px; border-top: 1px solid #1a2233; padding-top: 12px; }
+            .filter-toggles { padding: 12px 0 0; border-top: 1px solid #1a2233; flex-direction: column; gap: 12px; }
+            .filter-row { flex-direction: column; align-items: stretch; gap: 6px; width: 100%; }
+            .filter-group-label { align-self: flex-start; margin-bottom: 2px; }
+            .filter-btn { width: 100%; text-align: center; padding: 6px 12px; }
+            .right-content { margin-top: 50px; }
+            .desktop-header-info { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+            .banner-title-img { max-width: 380px; margin: 0; }
+                                    .desktop-meta-text { font-size: 17px; color: #64748b; margin: 0; }
+                      .desktop-stats-row { display: flex; gap: 16px; font-size: 14px; color: #ffffff; margin-top: 2px; font-weight: 600; }
+            .desktop-stats-row strong { color: #fff; }
+            .search-area { padding: 0; margin-bottom: 16px; }
+            .banner-stats { display: none; }
+        }
+
+        .mobile-only { display: flex; }
+        @media (min-width: 700px) { .mobile-only { display: none; } }
+
+        .empty-state { text-align: center; padding: 50px 20px; color: #3d4f6b; display: none; }
+        .empty-state i { font-size: 32px; margin-bottom: 12px; display: block; }
+        .empty-state p { margin: 0; font-size: 14px; }
+
+        .footer { width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; border-top: 1px solid #1a2233; font-size: 12px; color: #64748b; gap: 12px; margin-top: auto; background-color: #090F16; position: relative; z-index: 1; }
+        .footer-links { display: flex; gap: 22px; flex-wrap: wrap; justify-content: center; }
+        .footer-copy { font-size: 11px; color: #3d4f6b; }
+        .footer a { color: #64748b; text-decoration: none; transition: color 0.2s; }
+        .footer a:hover { color: #fff; }
+    </style>
+</head>
+<body>
+<div class="fundo-animado"></div>
+
+<div class="header">
+    <a href="index.html" class="logo">
+        <img src="https://i.postimg.cc/j2ZPFHq2/1000334215-removebg-preview.png" alt="Logo Se7en Editing">
+        Se7en Editing
+    </a>
+    <div class="header-right">
+        <a href="https://discord.com/invite/qmTbZJDYE7" target="_blank" class="discord-link"><i class="fa-brands fa-discord"></i></a>
+        <button class="menu-btn" id="menu-btn"><span></span><span></span><span></span></button>
+        <div class="dropdown-menu" id="dropdown-menu">
+            <div class="dropdown-section">
+       <div class="dropdown-label">Navegar</div>
+                <a href="index.html" class="dropdown-item"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="redes-sociais.html" class="dropdown-item"><i class="fa-solid fa-share-nodes"></i> Sociais</a>
+            </div>
+            <div class="dropdown-section">
+                <div class="dropdown-label">Páginas</div>
+                <a href="contato.html" class="dropdown-item"><i class="fa-solid fa-envelope"></i> Contato</a>
+                <a href="dmca.html" class="dropdown-item"><i class="fa-solid fa-shield-halved"></i> DMCA</a>
+                <a href="sobre.html" class="dropdown-item"><i class="fa-solid fa-circle-info"></i> Sobre</a>
+            </div>
+            <div class="dropdown-section">
+                <a href="https://discord.com/invite/qmTbZJDYE7" target="_blank" class="dropdown-item discord-item"><i class="fa-brands fa-discord"></i> Entrar no Discord</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="banner-hero">
+    <div class="banner-bg"></div>
+    <div class="banner-overlay-mobile"></div>
+</div>
+
+<div class="main-layout">
+    <div class="left-sidebar">
+        <img src="https://image.tmdb.org/t/p/original/tphkjmQq8WebuVwNXelmjLUXuPJ.jpg" alt="Godzilla" class="banner-poster">
+
+        <div class="sidebar-card">
+            <div class="mobile-header-info">               
+      <img src="https://image.tmdb.org/t/p/original/z5pLdgfhfLy9vRRyAMgXLy2TFir.png" alt="Godzilla" class="banner-title-img">      
+                <p class="banner-meta">2014 &nbsp;•&nbsp; Directed by Gareth Edwards &nbsp;•&nbsp; Film</p>
+                <div class="banner-genres">
+                    <span class="genre-tag">Action</span></span>
+                    <span class="genre-tag">Drama</span></span></span>
+                    <span class="genre-tag">Sci-Fi</span>               
+                </div>
+                <p class="banner-synopsis-short">The king has arrived.</p>
+              <button id="more-info-btn" class="more-info-btn">More info<i id="more-info-icon" class="fa-solid fa-chevron-down"></i></button>
+
+                <div class="banner-stats mobile-only">
+                    <span><strong id="total-count-mobile">0</strong> scenepacks</span>
+                    <span><strong id="total-downloads-mobile">0</strong> downloads</span>
+                </div>
+            </div>
+
+            <div id="more-info-drawer" class="more-info-drawer">
+                <div class="banner-ratings">
+                    <div class="rating-pill"><span class="imdb-badge">IMDb</span><span>6.4/10</span></div>
+                    <div class="rating-pill"><span>🍅</span><span>76%</span></span></div>
+                </div>
+                <p class="banner-cast"><i class="fa-solid fa-users"></i>Aaron Taylor-Johnson, Elizabeth Olsen, Juliette Binoche, Bryan Cranston, Ken Watanabe, Sally Hawkins</p>
+                <p class="banner-synopsis">Following the 1999 Janjira nuclear disaster that claimed his wife Sandra, Joe Brody seeks answers. His Navy officer son Ford accompanies him to Japan, where they discover the devastating truth and see ancient monsters emerge.</p>
+            </div>
+
+            <div class="filter-toggles">
+                <div class="filter-row">
+                    <span class="filter-group-label">Codec</span>
+                    <div style="display:flex;gap:6px;width:100%;">
+                        <button class="filter-btn" data-type="codec" data-value="H.265">H.265</button>
+                        <button class="filter-btn" data-type="codec" data-value="H.264">H.264</button>
+                    </div>
+                </div>
+                <div class="filter-row">
+                    <span class="filter-group-label">Quality</span>
+                    <div style="display:flex;gap:6px;width:100%;">
+                        <button class="filter-btn" data-type="quality" data-value="2160p">2160p</button>
+                        <button class="filter-btn" data-type="quality" data-value="1440p">1440p</button>
+                        <button class="filter-btn" data-type="quality" data-value="1080p">1080p</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-content">
+        <div class="desktop-header-info">
+            <img src="https://image.tmdb.org/t/p/original/z5pLdgfhfLy9vRRyAMgXLy2TFir.png" alt="Godzilla" class="banner-title-img">
+            <p class="desktop-meta-text">2014 &nbsp;•&nbsp; Directed by Gareth Edwards &nbsp;•&nbsp; Action, Drama, Sci-Fi &nbsp;•&nbsp; Film</p>
+            <div class="desktop-stats-row">
+                <span><strong id="total-count">0</strong> scenepacks</span>
+                <span><strong id="total-downloads">0</strong> downloads</span>
+            </div>
+        </div>
+
+        <div class="search-area">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Search by title or creator..." autocomplete="off">
+            </div>
+        </div>
+
+        <div class="active-filters" id="active-filters"></div>
+        <div class="results-count" id="results-count"></div>
+
+        <div class="table-header">
+            <span class="th-name"><strong id="total-count-table" style="color:#fff;">0</strong> Scenepacks</span>
+            <span class="th-size">Size</span>
+            <button class="th-downloads" id="sort-downloads-btn">Downloads <i class="fa-solid fa-arrow-down-short-wide" id="sort-downloads-icon"></i></button>
+        </div>
+        <div class="scenepacks-list" id="scenepacks-list"></div>
+        <div class="empty-state" id="empty-state">
+            <i class="fa-solid fa-box-open"></i>
+            <p>No scenepack found.</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-links">
+        <a href="index.html"></a>
+        <a href="contato.html"></a>
+        <a href="redes-sociais.html"></a>
+        <a href="https://discord.com/invite/qmTbZJDYE7" target="_blank"></a>
+        <a href="dmca.html"></a>
+        <a href="sobre.html"></a>
+    </div>
+    <span class="footer-copy">© 2026 Se7en Editing. All rights reserved.</span>
+</div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, getDocs, query, orderBy, doc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyDrxbiVc1jjtPrOfbV8Ld2ajjdpiBuw9_M",
+        authDomain: "se7en-scenepacks.firebaseapp.com",
+        projectId: "se7en-scenepacks",
+        storageBucket: "se7en-scenepacks.firebasestorage.app",
+        messagingSenderId: "973472322419",
+        appId: "1:973472322419:web:c3697f5c23218e4ea5ab06",
+        measurementId: "G-YGNR617P7E"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // MORE INFO toggle
+    const infoBtn = document.getElementById('more-info-btn');
+    const infoDrawer = document.getElementById('more-info-drawer');
+    const infoIcon = document.getElementById('more-info-icon');
+    infoBtn.addEventListener('click', () => {
+        const open = infoDrawer.style.display === 'flex';
+        infoDrawer.style.display = open ? 'none' : 'flex';
+        infoIcon.className = open ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
+    });
+
+    // MENU DROPDOWN
+    const menuBtn = document.getElementById('menu-btn');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    menuBtn.addEventListener('click', (e) => { e.stopPropagation(); menuBtn.classList.toggle('open'); dropdownMenu.classList.toggle('open'); });
+    document.addEventListener('click', (e) => { if (!e.target.closest('.header-right')) { menuBtn.classList.remove('open'); dropdownMenu.classList.remove('open'); } });
+
+    // HEADER SCROLL
+    const headerEl = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) headerEl.classList.add('scrolled');
+        else headerEl.classList.remove('scrolled');
+    });
+
+    let scenepacks = [];
+    let downloadsSortDir = 'desc';
+    let activeFilters = { codec: null, quality: null };
+
+    async function carregarDados() {
+        try {
+            const q = query(collection(db, "scenepacks"), orderBy("downloads", "desc"));
+            const snap = await getDocs(q);
+            scenepacks = [];
+            snap.forEach(doc => {
+                const d = doc.data();
+                if (d.titulo && d.titulo.toLowerCase().includes("godzilla (2014)")) {
+                    scenepacks.push({ id: doc.id, title: d.titulo, creator: d.criador || "maevethedit", codec: d.codec, quality: d.quality, size: d.tamanho || "N/A", url: d.url_download || "#", downloads: d.downloads || 0 });
+                }
+            });
+            const count = scenepacks.length;
+            const totalDownloads = scenepacks.reduce((sum, sp) => sum + (sp.downloads || 0), 0);
+            ['total-count','total-count-mobile','total-count-table'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = count;
+            });
+            ['total-downloads','total-downloads-mobile'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = totalDownloads.toLocaleString('en-US');
+            });
+            renderCards();
+        } catch(e) { console.error(e); }
+    }
+
+    function renderCards() {
+        const q = document.getElementById('search-input').value.toLowerCase().trim();
+        const list = document.getElementById('scenepacks-list');
+        const empty = document.getElementById('empty-state');
+        const counter = document.getElementById('results-count');
+        const filtered = scenepacks.filter(sp => {
+            const matchSearch = !q || sp.title.toLowerCase().includes(q) || sp.creator.toLowerCase().includes(q);
+            const matchCodec = !activeFilters.codec || sp.codec === activeFilters.codec;
+            const matchQuality = !activeFilters.quality || sp.quality === activeFilters.quality;
+            return matchSearch && matchCodec && matchQuality;
+        });
+        filtered.sort((a, b) => downloadsSortDir === 'desc' ? (b.downloads || 0) - (a.downloads || 0) : (a.downloads || 0) - (b.downloads || 0));
+        list.innerHTML = '';
+        if (filtered.length === 0) { empty.style.display = 'block'; counter.textContent = ''; return; }
+        empty.style.display = 'none';
+        const hasFilter = q || activeFilters.codec || activeFilters.quality;
+        counter.textContent = hasFilter ? `${filtered.length} resultado${filtered.length !== 1 ? 's' : ''} encontrado${filtered.length !== 1 ? 's' : ''}` : '';
+        filtered.forEach(sp => {
+            const card = document.createElement('a');
+            card.href = sp.url;
+            card.className = 'sp-card';
+            const qc = sp.quality === '2160p' ? 'k4' : 'k1';
+            card.innerHTML = `
+                <div class="sp-bar ${qc}"></div>
+                <div class="sp-card-inner">
+                    <div class="sp-card-info">
+                        <div class="sp-title">${sp.title}</div>
+                        <div class="sp-badges">
+                            <span class="sp-badge"><i class="fa-solid fa-user"></i>${sp.creator}</span>
+                            <span class="sp-badge"><i class="fa-solid fa-film"></i>${sp.codec}</span>
+                            <span class="sp-badge"><i class="fa-solid fa-expand"></i>${sp.quality}</span>
+                        </div>
+                        <span class="sp-size-mobile">${sp.size}</span>
+                    </div>
+                    <div class="sp-card-right">
+                        <span class="sp-quality-pill ${qc}">${sp.quality === '2160p' ? '4K' : sp.quality}</span>
+                        <span class="sp-size">${sp.size}</span>
+                        <span class="sp-downloads"><strong>${(sp.downloads || 0).toLocaleString('en-US')}</strong> downloads</span>
+                        <i class="fa-solid fa-arrow-right sp-arrow"></i>
+                    </div>
+                </div>
+            `;
+            card.addEventListener('click', async (e) => {
+                if (sp.url !== '#') {
+                    e.preventDefault();
+                    try { await updateDoc(doc(db, "scenepacks", sp.id), { downloads: increment(1) }); } catch(err) { console.error(err); }
+                    window.location.href = sp.url;
+                }
+            });
+            list.appendChild(card);
+        });
+    }
+
+    function renderActiveBadges() {
+        const container = document.getElementById('active-filters');
+        container.innerHTML = '';
+        let hasAny = false;
+        [{ key:'codec', label:'Codec' },{ key:'quality', label:'Qualidade' }].forEach(({ key, label }) => {
+            if (activeFilters[key]) {
+                hasAny = true;
+                const badge = document.createElement('span');
+                badge.className = 'active-badge';
+                badge.innerHTML = `${label}: ${activeFilters[key]} <i class="fa-solid fa-xmark"></i>`;
+                badge.addEventListener('click', () => { activeFilters[key] = null; document.querySelectorAll(`.filter-btn[data-type="${key}"]`).forEach(b => b.classList.remove('active')); renderActiveBadges(); renderCards(); });
+                container.appendChild(badge);
+            }
+        });
+        if (hasAny) {
+            const clearBtn = document.createElement('button');
+            clearBtn.className = 'clear-all-btn';
+            clearBtn.textContent = 'Limpar tudo';
+            clearBtn.addEventListener('click', () => { activeFilters = { codec: null, quality: null }; document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); renderActiveBadges(); renderCards(); });
+            container.appendChild(clearBtn);
+        }
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const type = btn.dataset.type, value = btn.dataset.value;
+            if (activeFilters[type] === value) { activeFilters[type] = null; btn.classList.remove('active'); }
+            else { document.querySelectorAll(`.filter-btn[data-type="${type}"]`).forEach(b => b.classList.remove('active')); activeFilters[type] = value; btn.classList.add('active'); }
+            renderActiveBadges(); renderCards();
+        });
+    });
+
+    document.getElementById('search-input').addEventListener('input', renderCards);
+
+    const sortBtn = document.getElementById('sort-downloads-btn');
+    const sortIcon = document.getElementById('sort-downloads-icon');
+    if (sortBtn) {
+        sortBtn.addEventListener('click', () => {
+            downloadsSortDir = downloadsSortDir === 'desc' ? 'asc' : 'desc';
+            sortIcon.className = downloadsSortDir === 'desc' ? 'fa-solid fa-arrow-down-short-wide' : 'fa-solid fa-arrow-up-wide-short';
+            renderCards();
+        });
+    }
+
+    carregarDados();
+</script>
+</body>
+</html>
+         
+         
