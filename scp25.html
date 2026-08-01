@@ -400,7 +400,7 @@
             scenepacks = [];
             snap.forEach(doc => {
                 const d = doc.data();
-                if (d.titulo && d.titulo.toLowerCase().includes("spider-man brand new day")) {
+                if (d.titulo && d.titulo.toLowerCase().includes("brand new day")) {
                     scenepacks.push({ id: doc.id, title: d.titulo, creator: d.criador || "maevethedit", codec: d.codec, quality: d.quality, size: d.tamanho || "N/A", url: d.url_download || "#", downloads: d.downloads || 0 });
                 }
             });
